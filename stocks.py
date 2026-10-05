@@ -20,8 +20,8 @@ oled.text('Loading', 32, 28)
 
 oled.show()
 
-SSID = "XXXXXXXX"
-PASSWORD = "XXXXXXXX"
+SSID = "RyaniPhone"
+PASSWORD = "12345678"
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
@@ -64,7 +64,7 @@ if wlan.isconnected():
     print("\nConnected! Network config:", wlan.ifconfig())
 
 range_opts = ["1d", "1mo", "ytd"]
-interval_opts = ["5m", "1d", "1wk"]
+interval_opts = ["5m", "90m", "1wk"]
 
 stock_tickers = ["^DJI", "NVDA", "TSM", "GOOG", "MSFT", "AMZN", "AVGO"]
 
@@ -208,6 +208,3 @@ while True:
     draw_sparkline(oled, stock_closes[current_stock][current_mode], bounds[0] + 1, bounds[1] + 1, bounds[2] - 1, bounds[3] - 1)
     
     oled.show()
-
-
-
